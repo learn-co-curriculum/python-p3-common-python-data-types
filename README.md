@@ -12,9 +12,9 @@ representing different kinds of information in our applications. In this lesson,
 we'll explore these different data types and see the similarities and
 differences to how Python and JavaScript treat these data types.
 
-Make sure to follow along with the examples in this lesson in the Python shell! As an
-object-oriented language, Python gives you a lot of tools to inspect different
-data types, so you'll learn more by getting your hands on the code.
+Make sure to follow along with the examples in this lesson in the Python shell!
+As an object-oriented language, Python gives you a lot of tools to inspect
+different data types, so you'll learn more by getting your hands on the code.
 
 ## Strings
 
@@ -26,19 +26,20 @@ double quotes:
 'Me too!'
 ```
 
-You can also create a new string by using the `String` class constructor method
-(though it's not common you'd need to):
+You can also create a new string by using the built-in `str()` function (though
+it's not common you'd need to):
 
 ```py
-String.new("I'm a string")
+str("I'm a string")
 ```
 
-If you want use string interpolation in Python, use double quotes like so:
+If you want use string interpolation in Python, use an f-String like so:
 
 ```py
 # Python
 dog_name = "Lucy"
-puts "Say hello to my dog #{dog_name}"
+print(f"Say hello to my dog {dog_name}")
+# Say hello to my dog Lucy
 ```
 
 This would be the equivalent of the following JavaScript code:
@@ -49,64 +50,65 @@ const dogName = "Lucy";
 console.log(`Say hello to my dog ${dogName}`);
 ```
 
-Backticks in Python are used for [another purpose][executing terminal commands],
-so **don't use backticks for strings in Python**.
+NOTE: Backticks in Python are not valid characters, so **don't use backticks for**
+**strings in Python**.
 
-[executing terminal commands]: https://www.bigbinary.com/blog/backtick-system-exec-in-ruby
+You can also use f-Strings to do more advanced formatting. Say you want to
+display all prices with two decimal places:
 
-To see some more things you can do with strings in Python, open up the Python shell and run the
-following:
+```py
+price_1 = 3
+price_2 = 2.5
+
+print(f"Item 1 costs ${ price_1:.2f }")
+# Item 1 costs $3.00
+print(f"Item 2 costs ${ price_2:.2f }")
+# Item 2 costs $2.50
+```
+
+To see some more things you can do with strings in Python, open up the Python
+shell and run the following:
 
 ```py
 "hello"
-# => "hello"
-"hello".upcase
-# => "HELLO"
-"HELLO".downcase
-# => "hello"
-"hello".capitalize
-# => "Hello"
-"hello".reverse
-# => "olleh"
+# "hello"
+"hello".upper()
+# "HELLO"
+"HELLO".lower()
+# "hello"
+"hello".capitalize()
+# "Hello"
 "hello" + "world"
-# => "helloworld"
+# "helloworld"
 "hello" * 3
-# => "hellohellohello"
+# "hellohellohello"
 ```
 
 You'll often hear it said that **"in Python, everything is an object"**. All of
 the methods that we called on strings above are available because the string
 literal "hello" is an **instance** of the `String` class. Thanks to Python's
-[introspection][] features, you can see for yourself:
+[type()][] function, you can see for yourself:
 
 ```py
-"hello".class
-# => String
+type("hello")
+# <class 'str'>
 ```
 
-[introspection]: https://www.leighhalliday.com/ruby-introspection-metaprogramming
+[type()]: https://www.geeksforgeeks.org/python-type-function/
 
-Calling the `methods` method on any Python object will display a list of all the
-methods that object responds to (you'll see `:upcase`, `:downcase`, `:reverse`
+Using the `dir()` function on any Python object will display a list of all the
+methods that object responds to (you'll see `upper`, `lower`, `capitalize`
 and more in that list):
 
 ```py
-"hello".methods
-# => [:unicode_normalize, :unicode_normalize!, :ascii_only?, :to_r, :encode, :encode!, ...
+dir("hello")
+# ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', ... ]
 ```
 
-> You can even see a few additional methods that aren't part of the String class
-> when you call `methods` on a string. Those additional methods are available
-> because the String class inherits from other more primitive Python classes,
-> including `BasicObject`. You can see this by running `String.ancestors`, which
-> will return an array of all the parent classes the `String` class inherits
-> from! We'll cover inheritance in more depth in the section on Object Oriented
-> Programming.
-
 You can learn more about the many String methods by reading the
-[Ruby documentation][string docs] on Strings.
+[Python documentation][string docs] on Strings.
 
-[string docs]: http://ruby-doc.org/core-2.7.3/String.html
+[string docs]: https://docs.python.org/3/library/string.html
 
 ## A Note on Notation
 
