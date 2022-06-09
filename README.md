@@ -274,6 +274,21 @@ list()
 # => []
 ```
 
+In order to access a specific element in a list, you will need to know its
+**index**, or the place it occupies in the list. **Indices** start at 0 and
+move up by 1 with each subsequent element. Once the index is known, the element
+can be accessed using square brackets and the index.
+
+```py
+list_abc = list('a','b','c')
+list[0]
+# 'a'
+list[1]
+# 'b'
+list[2]
+# 'c'
+```
+
 There are many ways to operate on lists and on each individual item, or
 element, within an list. Later on in the course, we'll learn about methods for
 iterating over lists (as with the `.forEach`, `.map`, etc methods in
@@ -285,12 +300,12 @@ len([1, 3, 400, 7])
 # 4
 sorted([5, 100, 234, 7, 2])
 # [2, 5, 7, 100, 234]
-[1, 2, 3].pop()
-# 3
 list_123 = [1, 2, 3]
-list_123.insert(1, 0)
+list_123.pop()
+# 3
+list_123.remove(1)
 print(list_123)
-# [1, 0, 2, 3]
+# [2]
 ```
 
 [list docs]: https://docs.python.org/3/library/stdtypes.html#list
@@ -311,8 +326,8 @@ tuple(1, 2, 3)
 
 Second, tuples are **immutable**. This means that once a tuple has been
 created, the tuple itself cannot be changed. Python functions that work on
-lists will still work on tuples, but tuples do not contain methods like
-`.pop()` and `.insert()` that would change their contents.
+lists to create new data will still work on tuples, but tuples do not contain
+methods like `.pop()` and `.insert()` that would change their contents.
 
 While tuples are less flexible than lists, this can prove advantageous in
 certain situations. The most common situation where you will see tuples while
@@ -327,7 +342,55 @@ For more on sequence data types, check
 
 ## Sets and Dicts
 
-Hashes are Python's equivalent of a plain old JavaScript object. They are composed
+Sets and dicts in Python also store sequences of data, but the individual
+elements in sets and dicts are **unique**.
+
+### Sets
+
+A [set][set docs] is unindexed, unordered, and unchangeable. It can be initiated with curly
+brackets or the `set()` class constructor. The `set()` class constructor takes
+a list or tuple as its only argument (remember those brackets and parentheses!)
+The elements of a set are unique:
+
+```py
+set()
+# {}
+set(3, 2, 3, 'a', 'b', 'a')
+# Traceback (most recent call last):
+#  File "<stdin>", line 1, in <module>
+# TypeError: set expected at most 1 argument, got 6
+
+set([3, 2, 3, 'a', 'b', 'a'])
+# {2, 3, 'a', 'b'}
+```
+
+**Unindexed** means that we cannot access elements of the set using square
+brackets as we do in lists and tuples.
+
+**Unordered** means that the contents of the set are in a random order.
+
+**Unchangeable** means that the individual elements of a set cannot be changed.
+
+> NOTE: _Immutable_ and _unchangeable_ mean different things when we're talking
+> about data types in Python. A set is not immutable because its overall
+> structure can be changed; it can be made shorter or longer. It is unchangeable
+> because an element cannot be changed into something else.
+
+Sets have many of the same methods as lists:
+
+```py
+s = {1, 2, 3}
+s.pop()
+# 1
+s.remove(3)
+# {2}
+```
+
+[set docs]: https://docs.python.org/3/library/stdtypes.html#set
+
+### Dicts
+
+Dicts are Python's equivalent of a plain old JavaScript object. They are composed
 of key/value pairs. Each key points to a specific value, just like a word and a
 definition in a regular dictionary.
 
