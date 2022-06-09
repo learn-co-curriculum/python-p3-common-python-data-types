@@ -2,8 +2,8 @@
 
 ## Learning Goals
 
-- Learn common data types in Python by comparing to equivalent data types in
-  JavaScript: strings, numbers, nil, booleans, arrays, and hashes
+- Learn common data types in Python by comparing to similar and equivalent data
+types in JavaScript: str, int, float, bool, list, tuple, set, dict, None
 
 ## Introduction
 
@@ -154,105 +154,13 @@ float(4 / 3)
 # 1.3333333333333333
 ```
 
-## None
-
-In Python, there is one special value that represents the **absence** of a value,
-`None`.
-
-In JavaScript, there are two different data types for representing the absence
-of value: `null` and `undefined`:
-
-```js
-let noValue;
-console.log(noValue);
-// => undefined
-noValue = null;
-console.log(noValue);
-// => null
-```
-
-`undefined` in JavaScript generally comes up in a few places: when a variable
-has been created, but hasn't been assigned a value, and when a function doesn't
-have any return value. `null`, on the other hand, is used to explicitly signify
-the absence of any value.
-
-Unlike JavaScript, Python won't let you create a variable without assigning a value.
-You must explicitly assign a value of `None` if you want an "empty" variable:
-
-```py
-no_value
-# Traceback (most recent call last):
-#   File "<stdin>", line 1, in <module>
-# NameError: name 'no_value' is not defined
-
-no_value = None
-print(no_value)
-# None
-```
-
-## Booleans
-
-There are only two values of the Boolean data type: `True` and `False`. We can
-confirm this by inspecting `True` and `False` with the `type()` function.
-
-```py
-type(True)
-# <class 'bool'>
-type(False)
-# <class 'bool'>
-```
-
-Python, like JavaScript, has the concept of "truthy" and "falsy" values as well:
-values which, when coerced to their equivalent boolean value, or evaluated as
-part of a conditional statement, return either true or false:
-
-```py
-not True
-# False
-not False
-# True
-not 1
-# False
-not 0
-# True
-not ''
-# True
-not None
-# True
-```
-
-> NOTE: `not` is the operator that reverses the truth value of a value, variable,
-> or statement. `!` still plays a role in Python, but it is only used in the `!=`
-> operator that asserts that two values are not equal.
-
-Like JavaScript, Python has many falsy values. They do not map perfectly to one
-another, though.
-
-Let's look back at JavaScript, where `null`, `undefined`, `false`, `0`, `NaN`,
-and `""` are all falsy values:
-
-```js
-!!null;
-// => false
-!!undefined;
-// => false
-!!false;
-// => false
-!!0;
-// => false
-!!NaN;
-// => false
-!!"";
-// => false
-```
-
 ## Sequence Types
 
 Python has a number of different data types that are useful for storing data.
 Each of these types can store any type of data inside; what differs between
 them are the rules for organizing and accessing the data.
 
-### Lists
+### **Lists**
 
 There are a number of ways to create a list. Just like with creating strings,
 you can use the literal constructor or the class constructor.
@@ -310,7 +218,7 @@ print(list_123)
 
 [list docs]: https://docs.python.org/3/library/stdtypes.html#list
 
-### Tuples
+### **Tuples**
 
 Tuples are nearly identical to lists, with two key differences:
 
@@ -345,19 +253,17 @@ For more on sequence data types, check
 Sets and dicts in Python also store sequences of data, but the individual
 elements in sets and dicts are **unique**.
 
-### Sets
+### **Sets**
 
-A [set][set docs] is unindexed, unordered, and unchangeable. It can be initiated with curly
-brackets or the `set()` class constructor. The `set()` class constructor takes
-a list or tuple as its only argument (remember those brackets and parentheses!)
-The elements of a set are unique:
+A [set][set docs] is unindexed, unordered, and unchangeable. It can be initiated
+with curly brackets or the `set()` class constructor. The `set()` class
+constructor takesa list or tuple as its only argument (remember those brackets
+and parentheses!) The elements of a set are unique:
 
 ```py
 set()
 # {}
 set(3, 2, 3, 'a', 'b', 'a')
-# Traceback (most recent call last):
-#  File "<stdin>", line 1, in <module>
 # TypeError: set expected at most 1 argument, got 6
 
 set([3, 2, 3, 'a', 'b', 'a'])
@@ -388,61 +294,160 @@ s.remove(3)
 
 [set docs]: https://docs.python.org/3/library/stdtypes.html#set
 
-### Dicts
+### **Dictionaries**
 
-Dicts are Python's equivalent of a plain old JavaScript object. They are composed
-of key/value pairs. Each key points to a specific value, just like a word and a
-definition in a regular dictionary.
+Dictionaries are Python's equivalent of a plain old JavaScript object. They are
+composed of key/value pairs. Each key points to a specific value, just like a
+word and a definition in a regular dictionary.
 
-There are a few ways of writing hashes. You can create a hash by simply writing
-key/value pairs enclosed in curly braces:
-
-```py
-{ key1: "value1", key2: "value2" }
-```
-
-Using the JSON-style syntax above will create a hash with **Symbols** for keys.
-To access data from this hash, you can use the bracket notation and pass in the
-symbol for the key you are trying to access:
+You can create a dictionary by simply writing key/value pairs enclosed in curly
+brackets. Note that when using keys must be in string format:
 
 ```py
-my_hash = { key1: "value1", key2: "value2" }
-my_hash[:key2]
-# => "value2"
+{ "key1": "value1", "key2": "value2" }
 ```
 
-Unlike JavaScript, you cannot use the dot notation to access keys on hashes
-— only the bracket notation will work:
+To access data from this dictionary, you can use the square bracket notation and
+pass in the symbol for the key you are trying to access:
 
 ```py
-my_hash = { key1: "value1", key2: "value2" }
-my_hash.key2
-# NoMethodError (undefined method `key2' for {:key1=>"value1", :key2=>"value2"}:Hash)
+my_dict = { "key1": 1, "key2": 2 }
+my_dict["key2"]
+# 2
 ```
 
-You can also create hashes with Strings for keys:
+You can also use the built-in [`.get()` method][dict.get help] to retrieve
+the value for a key. This is a useful method for times when you're unsure if
+a key exists, as it returns `None` instead of an error if no matching key
+exists:
 
 ```py
-{ "i'm a key" => "i'm a value!", "key2" => "value2" }
+my_dict = { "key1": "value1", "key2": "value2" }
+print(my_dict["key3"])
+# KeyError: 'key3'
+
+print(my_dict.get("key3"))
+# None
 ```
 
-This syntax is known as the **hash rocket** syntax, and is useful if you need
-String keys for Symbols; however, in general, using Symbols for keys is
-preferred.
-
-Last but not least, you can also use the [`Hash.new` syntax][hash docs], which
-would create an empty hash, `{}`:
+Unlike JavaScript, you cannot use the dot notation to access keys on
+dictionaries — only the bracket notation will work:
 
 ```py
-Hash.new
-# => {}
+my_dict = { "key1": "value1", "key2": "value2" }
+my_dict.key2
+# AttributeError: 'dict' object has no attribute 'key2'
 ```
 
-There are many methods for operating on hashes and their individual key/value
-pairs. We will learn much more about them later, but you can preview some
-methods [here][hash docs].
+You can also create dictionaries using the [`dict()` class constructor][dict docs].
 
-[hash docs]: http://Python-doc.org/core-2.7.3/Hash.html
+```py
+dict(x = 1, y = 2)
+# {'x': 1, 'y': 2}
+```
+
+There are many methods for operating on dictionaries and their individual
+key/value pairs. We will learn much more about them later, but you can preview
+some methods [here][dict docs].
+
+[dict docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
+[dict.get help]: https://www.w3schools.com/python/ref_dictionary_get.asp
+
+## None
+
+In Python, there is one special value that represents the **absence** of a value,
+`None`.
+
+In JavaScript, there are two different data types for representing the absence
+of value: `null` and `undefined`:
+
+```js
+let noValue;
+console.log(noValue);
+// => undefined
+noValue = null;
+console.log(noValue);
+// => null
+```
+
+`undefined` in JavaScript generally comes up in a few places: when a variable
+has been created, but hasn't been assigned a value, and when a function doesn't
+have any return value. `null`, on the other hand, is used to explicitly signify
+the absence of any value.
+
+Unlike JavaScript, Python won't let you create a variable without assigning a value.
+You must explicitly assign a value of `None` if you want an "empty" variable:
+
+```py
+no_value
+# NameError: name 'no_value' is not defined
+
+no_value = None
+print(no_value)
+# None
+```
+
+## Booleans
+
+There are only two values of the Boolean data type: `True` and `False`. We can
+confirm this by inspecting `True` and `False` with the `type()` function.
+
+```py
+type(True)
+# <class 'bool'>
+type(False)
+# <class 'bool'>
+```
+
+Python, like JavaScript, has the concept of "truthy" and "falsy" values as well:
+values which, when coerced to their equivalent boolean value, or evaluated as
+part of a conditional statement, return either `True` or `False`:
+
+```py
+not True
+# False
+not False
+# True
+not 1
+# False
+not 0
+# True
+not ''
+# True
+not None
+# True
+not []
+# True
+not ()
+# True
+not {}
+# True
+```
+
+> NOTE: `not` is the operator that reverses the truth value of a value, variable,
+> or statement. `!` still plays a role in Python, but it is only used in the `!=`
+> operator that asserts that two values are not equal.
+
+Like JavaScript, Python has many falsy values. They do not map perfectly to one
+another, though.
+
+Let's look back at JavaScript, where `null`, `undefined`, `false`, `0`, `NaN`,
+and `""` are all falsy values:
+
+```js
+!!null;
+// => false
+!!undefined;
+// => false
+!!false;
+// => false
+!!0;
+// => false
+!!NaN;
+// => false
+!!"";
+// => false
+```
 
 ## Conclusion
 
@@ -453,13 +458,13 @@ opinion cropping up as well, like what data is considered "truthy" and "falsy".
 
 As you're exploring data types in Python, make sure to keep the "everything is an
 object" principle in mind, and take advantage of methods that let you ask
-questions about your Python data like the `#methods` and `#class` methods. Keep
-the [Python documentation][Python docs] handy too!
+questions about your Python data like its attributes and methods. Keep
+the [Python documentation][python docs] handy too!
 
 ## Resources
 
-- [Ruby From Other Languages](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/)
-- [RailsBridge: Data Types](http://docs.railsbridge.org/ruby/datatypes)
-- [Ruby documentation][ruby docs]
+- [Switching to Python](https://realpython.com/switching-to-python/)
+- [Python Data Types](https://www.w3schools.com/python/python_datatypes.asp)
+- [Python documentation][python docs]
 
-[ruby docs]: https://ruby-doc.org/core-2.7.3/
+[python docs]: https://docs.python.org/3/
