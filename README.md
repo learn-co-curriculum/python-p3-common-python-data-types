@@ -3,7 +3,29 @@
 ## Learning Goals
 
 - Learn common data types in Python by comparing to similar and equivalent data
-types in JavaScript: str, int, float, bool, list, tuple, set, dict, None
+types in JavaScript: `str`, `int`, `float`, `bool`, `list`, `tuple`, `set`,
+`dict`, `None`
+
+***
+
+## Key Vocab
+
+- **Interpreter**: a program that executes other programs. Python programs
+require the Python interpreter to be installed on your computer so that they
+can be run.
+- **Python Shell**: an interactive interpreter that can be accessed from the
+command line.
+- **Data Type**: a specific kind of data. The Python interpreter uses these
+types to determine which actions can be performed on different data items.
+- **Exception**: a type of error that can be predicted and handled without
+causing a program to crash.
+- **Code Block**: a collection of code that is interpreted together. Python
+groups code blocks by indentation level.
+- **Function**: a named code block that performs a sequence of actions when it
+is called.
+- **Scope**: the area in your program where a specific variable can be called.
+
+***
 
 ## Introduction
 
@@ -15,6 +37,8 @@ differences to how Python and JavaScript treat these data types.
 Make sure to follow along with the examples in this lesson in the Python shell!
 As an object-oriented language, Python gives you a lot of tools to inspect
 different data types, so you'll learn more by getting your hands on the code.
+
+***
 
 ## Strings
 
@@ -115,6 +139,8 @@ You can learn more about the many String methods by reading the
 
 [string docs]: https://docs.python.org/3/library/string.html
 
+***
+
 ## Numbers
 
 In Python, unlike JavaScript, there are two types of numbers: Integers and Floats.
@@ -153,6 +179,8 @@ operations. As you can see, the following calculations are equivalent:
 float(4 / 3)
 # 1.3333333333333333
 ```
+
+***
 
 ## Sequence Types
 
@@ -247,6 +275,8 @@ For more on sequence data types, check
 [python.org's sequence documentation][sequence docs]
 
 [sequence docs]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+
+***
 
 ## Sets and Dicts
 
@@ -353,6 +383,8 @@ some methods [here][dict docs].
 [dict docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [dict.get help]: https://www.w3schools.com/python/ref_dictionary_get.asp
 
+***
+
 ## None
 
 In Python, there is one special value that represents the **absence** of a value,
@@ -386,6 +418,8 @@ no_value = None
 print(no_value)
 # None
 ```
+
+***
 
 ## Booleans
 
@@ -449,6 +483,8 @@ and `""` are all falsy values:
 // => false
 ```
 
+***
+
 ## Conclusion
 
 One of the first things to familiarize yourself with when learning a new
@@ -460,6 +496,8 @@ As you're exploring data types in Python, make sure to keep the "everything is a
 object" principle in mind, and take advantage of methods that let you ask
 questions about your Python data like its attributes and methods. Keep
 the [Python documentation][python docs] handy too!
+
+***
 
 ## Resources
 
