@@ -199,7 +199,7 @@ above, you can create a list:
 
 ```py
 [1, 3, 400, 7]
-# => [1, 3, 400, 7]
+# [1, 3, 400, 7]
 ```
 
 You can also create an list with the [`list()` syntax][list docs]. Just
@@ -207,7 +207,7 @@ typing `list()` will create an empty list (`[]`):
 
 ```py
 list()
-# => []
+# []
 ```
 
 In order to access a specific element in a list, you will need to know its
@@ -216,7 +216,7 @@ move up by 1 with each subsequent element. Once the index is known, the element
 can be accessed using square brackets and the index.
 
 ```py
-list_abc = list('a','b','c')
+list_abc = ['a','b','c']
 list[0]
 # 'a'
 list[1]
@@ -251,12 +251,13 @@ print(list_123)
 Tuples are nearly identical to lists, with two key differences:
 
 First, tuples are created with open and close parentheses (in place of square
-brackets) or the `tuple()` class constructor function.
+brackets). The `tuple()` class constructor function can also be used to cast
+lists and other iterable data types to tuples.
 
 ```py
 (1, 2, 3)
 # (1, 2, 3)
-tuple(1, 2, 3)
+tuple([1, 2, 3])
 # (1, 2, 3)
 ```
 
@@ -293,6 +294,7 @@ and parentheses!) The elements of a set are unique:
 ```py
 set()
 # {}
+
 set(3, 2, 3, 'a', 'b', 'a')
 # TypeError: set expected at most 1 argument, got 6
 
