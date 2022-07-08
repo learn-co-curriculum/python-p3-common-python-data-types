@@ -157,12 +157,12 @@ integers. You can read more about [Integers here][integer docs] and more about
 [float docs]: https://docs.python.org/3/library/functions.html#float
 
 You can convert some other data types to integers or floats with the `int()` and
-`float()` functions:
+`float()` class constructor functions:
 
 ```py
 int("1")
 # 1
-int("1.1")
+int(1.1)
 # 1
 float("1.1")
 # 1.1
