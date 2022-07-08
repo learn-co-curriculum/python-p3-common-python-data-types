@@ -217,11 +217,11 @@ can be accessed using square brackets and the index.
 
 ```py
 list_abc = ['a','b','c']
-list[0]
+list_abc[0]
 # 'a'
-list[1]
+list_abc[1]
 # 'b'
-list[2]
+list_abc[2]
 # 'c'
 ```
 
