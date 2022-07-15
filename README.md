@@ -3,29 +3,29 @@
 ## Learning Goals
 
 - Learn common data types in Python by comparing to similar and equivalent data
-types in JavaScript: `str`, `int`, `float`, `bool`, `list`, `tuple`, `set`,
-`dict`, `None`
+  types in JavaScript: `str`, `int`, `float`, `bool`, `list`, `tuple`, `set`,
+  `dict`, `None`
 
-***
+---
 
 ## Key Vocab
 
 - **Interpreter**: a program that executes other programs. Python programs
-require the Python interpreter to be installed on your computer so that they
-can be run.
+  require the Python interpreter to be installed on your computer so that they
+  can be run.
 - **Python Shell**: an interactive interpreter that can be accessed from the
-command line.
+  command line.
 - **Data Type**: a specific kind of data. The Python interpreter uses these
-types to determine which actions can be performed on different data items.
+  types to determine which actions can be performed on different data items.
 - **Exception**: a type of error that can be predicted and handled without
-causing a program to crash.
+  causing a program to crash.
 - **Code Block**: a collection of code that is interpreted together. Python
-groups code blocks by indentation level.
+  groups code blocks by indentation level.
 - **Function**: a named code block that performs a sequence of actions when it
-is called.
+  is called.
 - **Scope**: the area in your program where a specific variable can be called.
 
-***
+---
 
 ## Introduction
 
@@ -39,7 +39,7 @@ As an object-oriented language, Python gives you a lot of tools to inspect
 different data types, so you'll learn more by getting your hands on the code.
 Open the Python shell in your terminal by entering `python` or `python3`.
 
-***
+---
 
 ## Strings
 
@@ -75,7 +75,7 @@ const dogName = "Lucy";
 console.log(`Say hello to my dog ${dogName}`);
 ```
 
-> NOTE: Backticks in Python are not valid characters, so **don't use**
+> NOTE: Backticks in Python are not valid characters, so **don't use** >
 > **backticks forstrings in Python**.
 
 You can also use f-Strings to do more advanced formatting. Say you want to
@@ -122,8 +122,8 @@ type("hello")
 [type()]: https://www.geeksforgeeks.org/python-type-function/
 
 Using the `dir()` function on any Python object will display a list of all the
-methods that object responds to (you'll see `upper`, `lower`, `capitalize`
-and more in that list):
+methods that object responds to (you'll see `upper`, `lower`, `capitalize` and
+more in that list):
 
 ```py
 dir("hello")
@@ -135,16 +135,17 @@ dir("hello")
 > methods run automatically under certain conditions- we'll learn more about
 > them when we cover object-oriented programming.
 
-You can learn more about the many String methods by reading the
-[Python documentation][string docs] on Strings.
+You can learn more about the many String methods by reading the [Python
+documentation][string docs] on Strings.
 
 [string docs]: https://docs.python.org/3/library/string.html
 
-***
+---
 
 ## Numbers
 
-In Python, unlike JavaScript, there are two types of numbers: Integers and Floats.
+In Python, unlike JavaScript, there are two types of numbers: Integers and
+Floats.
 
 **Integers** are whole numbers, like `7`.
 
@@ -181,30 +182,30 @@ float(4 / 3)
 # 1.3333333333333333
 ```
 
-***
+---
 
 ## Sequence Types
 
 Python has a number of different data types that are useful for storing data.
-Each of these types can store any type of data inside; what differs between
-them are the rules for organizing and accessing the data.
+Each of these types can store any type of data inside; what differs between them
+are the rules for organizing and accessing the data.
 
 ### **Lists**
 
 There are a number of ways to create a list. Just like with creating strings,
 you can use the literal constructor or the class constructor.
 
-`[1, 3, 400, 7]` is a list of integers. Any set of comma separated data
-enclosed in brackets is a list. So, by simply writing something like the
-above, you can create a list:
+`[1, 3, 400, 7]` is a list of integers. Any set of comma separated data enclosed
+in brackets is a list. So, by simply writing something like the above, you can
+create a list:
 
 ```py
 [1, 3, 400, 7]
 # [1, 3, 400, 7]
 ```
 
-You can also create an list with the [`list()` syntax][list docs]. Just
-typing `list()` will create an empty list (`[]`):
+You can also create an list with the [`list()` syntax][list docs]. Just typing
+`list()` will create an empty list (`[]`):
 
 ```py
 list()
@@ -212,9 +213,9 @@ list()
 ```
 
 In order to access a specific element in a list, you will need to know its
-**index**, or the place it occupies in the list. **Indices** start at 0 and
-move up by 1 with each subsequent element. Once the index is known, the element
-can be accessed using square brackets and the index.
+**index**, or the place it occupies in the list. **Indices** start at 0 and move
+up by 1 with each subsequent element. Once the index is known, the element can
+be accessed using square brackets and the index.
 
 ```py
 list_abc = ['a','b','c']
@@ -226,11 +227,11 @@ list_abc[2]
 # 'c'
 ```
 
-There are many ways to operate on lists and on each individual item, or
-element, within an list. Later on in the course, we'll learn about methods for
-iterating over lists (as with the `.forEach`, `.map`, etc methods in
-JavaScript). For now, we'll preview a few list functions and methods, and you
-can check out more [here][list docs].
+There are many ways to operate on lists and on each individual item, or element,
+within an list. Later on in the course, we'll learn about methods for iterating
+over lists (as with the `.forEach`, `.map`, etc methods in JavaScript). For now,
+we'll preview a few list functions and methods, and you can check out more
+[here][list docs].
 
 ```py
 len([1, 3, 400, 7])
@@ -262,23 +263,24 @@ tuple([1, 2, 3])
 # (1, 2, 3)
 ```
 
-Second, tuples are **immutable**. This means that once a tuple has been
-created, the tuple itself cannot be changed. Python functions that work on
-lists to create new data will still work on tuples, but tuples do not contain
-methods like `.pop()` and `.insert()` that would change their contents.
+Second, tuples are **immutable**. This means that once a tuple has been created,
+the tuple itself cannot be changed. Python functions that work on lists to
+create new data will still work on tuples, but tuples do not contain methods
+like `.pop()` and `.insert()` that would change their contents.
 
 While tuples are less flexible than lists, this can prove advantageous in
-certain situations. The most common situation where you will see tuples while
-at Flatiron will be in data retrieved from a database. Since you want to keep
-an accurate record of what is in the database while your application works with
-the data, a tuple will protect that information until it is no longer needed.
+certain situations. The most common situation where you will see tuples while at
+Flatiron will be in data retrieved from a database. Since you want to keep an
+accurate record of what is in the database while your application works with the
+data, a tuple will protect that information until it is no longer needed.
 
-For more on sequence data types, check
-[python.org's sequence documentation][sequence docs]
+For more on sequence data types, check [python.org's sequence
+documentation][sequence docs]
 
-[sequence docs]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+[sequence docs]:
+  https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 
-***
+---
 
 ## Sets and Dicts
 
@@ -334,7 +336,7 @@ composed of key/value pairs. Each key points to a specific value, just like a
 word and a definition in a regular dictionary.
 
 You can create a dictionary by simply writing key/value pairs enclosed in curly
-brackets. Note that when using keys must be in string format:
+brackets. Note that keys must be in string format:
 
 ```py
 { "key1": "value1", "key2": "value2" }
@@ -349,10 +351,9 @@ my_dict["key2"]
 # 2
 ```
 
-You can also use the built-in [`.get()` method][dict.get help] to retrieve
-the value for a key. This is a useful method for times when you're unsure if
-a key exists, as it returns `None` instead of an error if no matching key
-exists:
+You can also use the built-in [`.get()` method][dict.get help] to retrieve the
+value for a key. This is a useful method for times when you're unsure if a key
+exists, as it returns `None` instead of an error if no matching key exists:
 
 ```py
 my_dict = { "key1": "value1", "key2": "value2" }
@@ -372,7 +373,8 @@ my_dict.key2
 # AttributeError: 'dict' object has no attribute 'key2'
 ```
 
-You can also create dictionaries using the [`dict()` class constructor][dict docs].
+You can also create dictionaries using the [`dict()` class
+constructor][dict docs].
 
 ```py
 dict(x = 1, y = 2)
@@ -386,12 +388,12 @@ some methods [here][dict docs].
 [dict docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [dict.get help]: https://www.w3schools.com/python/ref_dictionary_get.asp
 
-***
+---
 
 ## None
 
-In Python, there is one special value that represents the **absence** of a value,
-`None`.
+In Python, there is one special value that represents the **absence** of a
+value, `None`.
 
 In JavaScript, there are two different data types for representing the absence
 of value: `null` and `undefined`:
@@ -410,8 +412,9 @@ has been created, but hasn't been assigned a value, and when a function doesn't
 have any return value. `null`, on the other hand, is used to explicitly signify
 the absence of any value.
 
-Unlike JavaScript, Python won't let you create a variable without assigning a value.
-You must explicitly assign a value of `None` if you want an "empty" variable:
+Unlike JavaScript, Python won't let you create a variable without assigning a
+value. You must explicitly assign a value of `None` if you want an "empty"
+variable:
 
 ```py
 no_value
@@ -422,7 +425,7 @@ print(no_value)
 # None
 ```
 
-***
+---
 
 ## Booleans
 
@@ -461,9 +464,9 @@ not {}
 # True
 ```
 
-> NOTE: `not` is the operator that reverses the truth value of a value, variable,
-> or statement. `!` still plays a role in Python, but it is only used in the `!=`
-> operator that asserts that two values are not equal.
+> NOTE: `not` is the operator that reverses the truth value of a value,
+> variable, or statement. `!` still plays a role in Python, but it is only used
+> in the `!=` operator that asserts that two values are not equal.
 
 Like JavaScript, Python has many falsy values. They do not map perfectly to one
 another, though.
@@ -486,7 +489,7 @@ and `""` are all falsy values:
 // => false
 ```
 
-***
+---
 
 ## Conclusion
 
@@ -495,12 +498,12 @@ language is its common data types. You'll find similarities across almost all
 programming languages when it comes to data types, with some differences of
 opinion cropping up as well, like what data is considered "truthy" and "falsy".
 
-As you're exploring data types in Python, make sure to keep the "everything is an
-object" principle in mind, and take advantage of methods that let you ask
-questions about your Python data like its attributes and methods. Keep
-the [Python documentation][python docs] handy too!
+As you're exploring data types in Python, make sure to keep the "everything is
+an object" principle in mind, and take advantage of methods that let you ask
+questions about your Python data like its attributes and methods. Keep the
+[Python documentation][python docs] handy too!
 
-***
+---
 
 ## Resources
 
