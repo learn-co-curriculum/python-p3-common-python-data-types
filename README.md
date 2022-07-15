@@ -32,11 +32,12 @@ is called.
 Just like in JavaScript, Python has several common built-in data types for
 representing different kinds of information in our applications. In this lesson,
 we'll explore these different data types and see the similarities and
-differences to how Python and JavaScript treat these data types.
+differences in how Python and JavaScript treat these data types.
 
 Make sure to follow along with the examples in this lesson in the Python shell!
 As an object-oriented language, Python gives you a lot of tools to inspect
 different data types, so you'll learn more by getting your hands on the code.
+Open the Python shell in your terminal by entering `python` or `python3`.
 
 ***
 
