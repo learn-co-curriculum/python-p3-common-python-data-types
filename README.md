@@ -288,7 +288,7 @@ elements in sets and dicts are **unique**.
 
 A [set][set docs] is unindexed, unordered, and unchangeable. It can be initiated
 with curly brackets or the `set()` class constructor. The `set()` class
-constructor takesa list or tuple as its only argument (remember those brackets
+constructor takes a list or tuple as its only argument (remember those brackets
 and parentheses!) The elements of a set are unique:
 
 ```py
