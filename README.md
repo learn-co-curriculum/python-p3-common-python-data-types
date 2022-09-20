@@ -274,7 +274,7 @@ Flatiron will be in data retrieved from a database. Since you want to keep an
 accurate record of what is in the database while your application works with the
 data, a tuple will protect that information until it is no longer needed.
 
-> **NOTE: Parenthese can also be used for order of operations and grouping
+> **NOTE: Parentheses can also be used for order of operations and grouping
 > statements. To let Python know that it's looking at a tuple, there has to be
 > at least one comma- even in tuples with only one element: `(1,)`.**
 
