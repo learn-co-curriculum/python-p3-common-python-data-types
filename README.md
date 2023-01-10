@@ -4,7 +4,7 @@
 
 - Learn common data types in Python by comparing to similar and equivalent data
   types in JavaScript: `str`, `int`, `float`, `bool`, `list`, `tuple`, `set`,
-  `dict`, `None`
+  `dict`, `None`.
 
 ---
 
@@ -58,13 +58,13 @@ function (though it's not common you'd need to):
 str("I'm a string")
 ```
 
-If you want use string interpolation in Python, use an f-String like so:
+If you want to use string interpolation in Python, use an f-String like so:
 
 ```py
 # Python
 dog_name = "Lucy"
 print(f"Say hello to my dog {dog_name}")
-# Say hello to my dog Lucy
+# => Say hello to my dog Lucy
 ```
 
 This would be the equivalent of the following JavaScript code:
@@ -75,8 +75,8 @@ const dogName = "Lucy";
 console.log(`Say hello to my dog ${dogName}`);
 ```
 
-> NOTE: Backticks in Python are not valid characters, so **don't use** >
-> **backticks forstrings in Python**.
+> NOTE: Backticks in Python are not valid characters, so **don't use
+> backticks ( ` ) for strings in Python**.
 
 You can also use f-Strings to do more advanced formatting. Say you want to
 display all prices with two decimal places:
@@ -86,9 +86,9 @@ price_1 = 3
 price_2 = 2.5
 
 print(f"Item 1 costs ${price_1:.2f}")
-# Item 1 costs $3.00
+# => Item 1 costs $3.00
 print(f"Item 2 costs ${price_2:.2f}")
-# Item 2 costs $2.50
+# => Item 2 costs $2.50
 ```
 
 To see some more things you can do with strings in Python, open up the Python
@@ -116,7 +116,7 @@ literal "hello" is an **instance** of the `String` class. Thanks to Python's
 
 ```py
 type("hello")
-# <class 'str'>
+# => <class 'str'>
 ```
 
 [type()]: https://www.geeksforgeeks.org/python-type-function/
@@ -127,7 +127,7 @@ more in that list):
 
 ```py
 dir("hello")
-# ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', ... ]
+# => ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', ... ]
 ```
 
 > NOTE: Methods that are preceded and followed by double underscores are called
@@ -163,11 +163,11 @@ You can convert some other data types to integers or floats with the `int()` and
 
 ```py
 int("1")
-# 1
+# => 1
 int(1.1)
-# 1
+# => 1
 float("1.1")
-# 1.1
+# => 1.1
 ```
 
 Like JavaScript, Python will convert an Integer to a Float when performing math
@@ -201,7 +201,7 @@ create a list:
 
 ```py
 [1, 3, 400, 7]
-# [1, 3, 400, 7]
+# => [1, 3, 400, 7]
 ```
 
 You can also create an list with the [`list()` syntax][list docs]. Just typing
@@ -209,7 +209,7 @@ You can also create an list with the [`list()` syntax][list docs]. Just typing
 
 ```py
 list()
-# []
+# => []
 ```
 
 In order to access a specific element in a list, you will need to know its
@@ -220,11 +220,11 @@ be accessed using square brackets and the index.
 ```py
 list_abc = ['a','b','c']
 list_abc[0]
-# 'a'
+# => 'a'
 list_abc[1]
-# 'b'
+# => 'b'
 list_abc[2]
-# 'c'
+# => 'c'
 ```
 
 There are many ways to operate on lists and on each individual item, or element,
@@ -258,9 +258,9 @@ lists and other iterable data types to tuples.
 
 ```py
 (1, 2, 3)
-# (1, 2, 3)
+# => (1, 2, 3)
 tuple([1, 2, 3])
-# (1, 2, 3)
+# => (1, 2, 3)
 ```
 
 Second, tuples are **immutable**. This means that once a tuple has been created,
@@ -300,13 +300,13 @@ and parentheses!) The elements of a set are unique:
 
 ```py
 set()
-# {}
+# => {}
 
 set(3, 2, 3, 'a', 'b', 'a')
-# TypeError: set expected at most 1 argument, got 6
+# => TypeError: set expected at most 1 argument, got 6
 
 set([3, 2, 3, 'a', 'b', 'a'])
-# {2, 3, 'a', 'b'}
+# => {2, 3, 'a', 'b'}
 ```
 
 **Unindexed** means that we cannot access elements of the set using square
@@ -326,9 +326,9 @@ Sets have many of the same methods as lists:
 ```py
 s = {1, 2, 3}
 s.pop()
-# 1
+# => 1
 s.remove(3)
-# {2}
+# => {2}
 ```
 
 [set docs]: https://docs.python.org/3/library/stdtypes.html#set
@@ -352,7 +352,7 @@ pass in the symbol for the key you are trying to access:
 ```py
 my_dict = { "key1": 1, "key2": 2 }
 my_dict["key2"]
-# 2
+# => 2
 ```
 
 You can also use the built-in [`.get()` method][dict.get help] to retrieve the
@@ -362,10 +362,10 @@ exists, as it returns `None` instead of an error if no matching key exists:
 ```py
 my_dict = { "key1": "value1", "key2": "value2" }
 print(my_dict["key3"])
-# KeyError: 'key3'
+# => KeyError: 'key3'
 
 print(my_dict.get("key3"))
-# None
+# => None
 ```
 
 Unlike JavaScript, you cannot use the dot notation to access keys on
@@ -374,7 +374,7 @@ dictionaries — only the bracket notation will work:
 ```py
 my_dict = { "key1": "value1", "key2": "value2" }
 my_dict.key2
-# AttributeError: 'dict' object has no attribute 'key2'
+# => AttributeError: 'dict' object has no attribute 'key2'
 ```
 
 You can also create dictionaries using the [`dict()` class
@@ -382,7 +382,7 @@ constructor][dict docs].
 
 ```py
 dict(x = 1, y = 2)
-# {'x': 1, 'y': 2}
+# => {'x': 1, 'y': 2}
 ```
 
 There are many methods for operating on dictionaries and their individual
@@ -422,11 +422,11 @@ variable:
 
 ```py
 no_value
-# NameError: name 'no_value' is not defined
+# => NameError: name 'no_value' is not defined
 
 no_value = None
 print(no_value)
-# None
+# => None
 ```
 
 ---
@@ -438,9 +438,9 @@ confirm this by inspecting `True` and `False` with the `type()` function.
 
 ```py
 type(True)
-# <class 'bool'>
+# => <class 'bool'>
 type(False)
-# <class 'bool'>
+# => <class 'bool'>
 ```
 
 Python, like JavaScript, has the concept of "truthy" and "falsy" values as well:
@@ -449,23 +449,23 @@ part of a conditional statement, return either `True` or `False`:
 
 ```py
 not True
-# False
+# => False
 not False
-# True
+# => True
 not 1
-# False
+# => False
 not 0
-# True
+# => True
 not ''
-# True
+# => True
 not None
-# True
+# => True
 not []
-# True
+# => True
 not ()
-# True
+# => True
 not {}
-# True
+# => True
 ```
 
 > NOTE: `not` is the operator that reverses the truth value of a value,
